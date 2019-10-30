@@ -11,6 +11,6 @@ namespace Dating_App_API.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base (options) {}
 
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

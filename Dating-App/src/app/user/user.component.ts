@@ -2,23 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-person',
-  templateUrl: './person.component.html',
-  styleUrls: ['./person.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class PersonComponent implements OnInit {
-  persons: any;
+export class UserComponent implements OnInit {
+  users: any;
 
   // Can make http requests to client with http in constructor
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.getPersons();
+    this.getUsers();
   }
 
-  getPersons() {
+  getUsers() {
     this.http.get('http://localhost:5000/api/values').subscribe(response => {
-      this.persons = response;
+      this.users = response;
     }, error => {
       console.log(error);
     });
